@@ -2,19 +2,25 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int ab, fibo = 1, awalan = 0;
 
-        System.out.println("input : ");
-        ab = in.nextInt();
+            Scanner show = new Scanner(System.in);
 
-        if (ab > 0){
-            for (int i = 0; i < ab ; i++) {
-                System.out.print(fibo + ", ");
-                int temp = fibo;
-                fibo += awalan;
-                awalan = temp;
+             System.out.println("input : ");
+             
+            int n = show.nextInt();
+            long fib [] = new long[n];
+
+            long temp = 0;
+            fib[0] = 1;
+            fib[1] = 1;
+            System.out.println("");
+            System.out.println("OutPut : ");
+            for (int i = 2; i < n ; i++) {
+                fib[i] = fib[i-1] + fib[i-2];
             }
+            for (int i = 0; i < n ; i++) {
+                temp = temp + fib[i];
+            }
+            System.out.println(temp);
         }
     }
-}
